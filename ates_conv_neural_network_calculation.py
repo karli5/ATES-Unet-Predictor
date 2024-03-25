@@ -11,7 +11,7 @@ import os
 
 # Define paths
 csv_dir = 'Data_Vector_Scalar'
-numpy_dir = 'TemperatureFields/NumpyArrays'
+numpy_dir = 'TemperatureFields'
 scaler_dir = 'Scalers'
 model_dir = 'AI_Models'
 
