@@ -21,7 +21,7 @@ os.makedirs(model_dir, exist_ok=True)
 for phase in ["Inj", "Store", "Prod", "Prod_Scalar", "Pause"]:
 
     # Load scalers
-    if phase == "Prod_scalar":
+    if phase == "Prod_Scalar":
         vector_scaler = load(os.path.join(scaler_dir, 'vector_scaler_Prod.joblib'))
         heat_out_scaler = load(os.path.join(scaler_dir, 'heat_out_scaler_Prod.joblib'))
         field_scaler = load(os.path.join(scaler_dir, 'field_scaler_Prod.joblib'))        
@@ -180,7 +180,7 @@ for phase in ["Inj", "Store", "Prod", "Prod_Scalar", "Pause"]:
 
     # Create the model
     model = create_model(phase)
-    if phase != "Prod_scalar":
+    if phase != "Prod_Scalar":
         model.compile(optimizer='adam', loss={'output_field': 'mean_squared_error'}, metrics={'output_field': 'mean_absolute_error'})
     else: 
         model.compile(optimizer='adam', loss={'output_scalar': 'mean_squared_error'}, metrics={'output_scalar': 'mean_absolute_error'})
