@@ -5,3 +5,5 @@ Code can be tested by:
 1) Unzip the temperature fields data
 2) Start building the scalers
 3) Start the model training process
+
+A small amount of the input data is provided to test the script. 
